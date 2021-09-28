@@ -32,11 +32,14 @@ RUN dnf update -y && dnf install -y\
 	golang\
 	gtest-devel\
 	hub\
+	iproute\
+	iputils\
 	json-c-devel\
 	keyutils-libs-devel\
 	kmod-devel\
 	lbzip2\
 	libatomic\
+	librdmacm-utils\
 	libtool\
 	libudev-devel\
 	libunwind-devel\
@@ -47,6 +50,7 @@ RUN dnf update -y && dnf install -y\
 	memkind\
 	memkind-devel\
 	nano\
+	net-tools\
 	ncurses-devel\
 	ndctl-devel\
 	numactl-devel\
@@ -58,6 +62,7 @@ RUN dnf update -y && dnf install -y\
 	pkgconfig\
 	python3-devel\
 	rapidjson-devel\
+	rdma-core-devel\
 	rpm-build\
 	rpm-build-libs\
 	rpmdevtools\
