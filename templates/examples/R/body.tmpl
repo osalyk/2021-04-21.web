@@ -112,11 +112,20 @@ XXX
 {{step "Remote Persistent Memory access"}}
 
 <p>
-XXX
-- introduce used rpma_read/write/flush() operations and
-- describe their role in achieving remote persistency
-- describe what the example does
-- refer the "connection.h" "connection.c" files are taken from the previous step
+In this step we will use the following librpma functions:
+<ul>
+    <li>rpma_read() - initiates transferring (reading) data from the remote memory to the local memory
+        (see the <a href="https://pmem.io/rpma/manpages/master/rpma_read.3" target="_blank">rpma_read(3) manual</a> for details),</li>
+    <li>rpma_write() - initiates transferring (writing) data from the local memory to the remote memory
+        (see the <a href="https://pmem.io/rpma/manpages/master/rpma_write.3" target="_blank">rpma_write(3) manual</a> for details),</li>
+    <li>rpma_flush() - initiates finalizing a transfer of data to the remote memory,
+        it flushes data down to the persistent domain or deep enough to make it visible on the remote node
+        (see the <a href="https://pmem.io/rpma/manpages/master/rpma_flush.3" target="_blank">rpma_flush(3) manual</a> for details).</li>
+</ul>
+
+<p>
+1) describe what the example does </br>
+2) refer the "connection.h" "connection.c" files are taken from the previous step
 
 {{edit "client.c" "server.c" "connection.h" "build_main.sh"}}
 
