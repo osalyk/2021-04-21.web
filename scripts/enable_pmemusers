@@ -109,6 +109,9 @@ die "$dev_dax device DAX not listed by ndctl\n" if ($exists != 1);
 my $size = `ndctl list | jq '.[] | select(.chardev=="$dax_name")' | jq '.size'`;
 die "size of device DAX is less than 800KiB ($size < 819200)\n" if ($size < 819200);
 
+# add RW permissions for all users to the device DAX
+runy("chmod a+rw $dev_dax");
+
 for (my $id = $Lo; $id <= $Hi; $id++) {
 	my $thisid = $BASEID + $id;
 	my $user = "pmemuser$id";
