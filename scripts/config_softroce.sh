@@ -5,6 +5,13 @@
 #
 # config_softroce.sh - configure SoftRoCE
 #
+# This script configures a software-emulated RDMA network interface (SoftRoCE),
+# which requires:
+# - one machine with a regular Ethernet network adapter,
+# - the libibverbs and librdmacm libraries (or the rdma-core package
+#   containing both of them) installed,
+# - the 'rdma_rxe' kernel module loaded.
+#
 # Usage: config_softroce.sh [<network_interface>]
 #
 # Options:
