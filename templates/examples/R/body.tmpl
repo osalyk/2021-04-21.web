@@ -141,24 +141,27 @@ the following librpma functions:
 </ul>
 
 <p>
-In this example, after having established a connection (see the previous step for details),
-the client reads (using <code>rpma_read()</code>) an initial content of the server's
-memory (the string: "<i>The initial content of the server memory</i>"), then it writes
-(using <code>rpma_write()</code>) the new message ("<i>Hello world!</i>") to the server's
-memory and finally it flushes the just written data down to the persistent domain.
+In this example, after having established a connection (see the previous step for
+details), the client reads (using <code>rpma_read()</code>) an initial content
+of the server's memory (the string: "<i>The initial content of the server memory</i>"),
+then it writes (using <code>rpma_write()</code>) the new message ("<i>Hello world!</i>")
+to the server's memory and finally it flushes the just written data down
+to the persistent domain.
 
 <p>
 Looking more deeply into the code it can be re-described in the following way:
 <ul>
     <li>The server prepares a local persistent memory and exposes the memory description
-        along with other parameters required to perform an RDMA read, write and flush operations.
-        After the connection is established, the server waits for the client to disconnect.</li>
+        along with other parameters required to perform an RDMA read, write and flush
+        operations. After the connection is established, the server waits for the client
+        to disconnect.</li>
     <li>The client allocates memory from DRAM and registers it as a reading destination
         and writing source. After the connection is established the client receives
-        the server's memory regions registered as a reading source and a writing destination.
-        The client performs the RDMA read from the remote memory region to the local memory
-        region, then it writes new data to the local memory region and performs the RDMA write
-        from the local memory region to the remote memory region followed by the RPMA flush.</li>
+        the server's memory regions registered as a reading source and a writing
+        destination. The client performs the RDMA read from the remote memory region
+        to the local memory region, then it writes new data to the local memory region
+        and performs the RDMA write from the local memory region to the remote memory
+        region followed by the RPMA flush.</li>
 </ul>
 
 <p>
@@ -223,7 +226,8 @@ If you want to learn more:
         </ul>
     </li>
     <li><a href="https://pmem.io/rpma/" target="_blank">https://pmem.io/rpma/</a>
-         - where you can find the librpma library manuals, configuration guidelines and performance reports.</li>
+         - where you can find the librpma library manuals, configuration guidelines
+           and performance reports.</li>
     <li>It may be also useful to read our whitepaper:
         <a href="https://www.intel.com/content/www/us/en/developer/articles/technical/persistent-memory-replication-over-traditional-rdma-part-1-understanding-remote-persistent.html" target="_blank">Persistent Memory Replication Over Traditional RDMA</a>.
         <ul>
